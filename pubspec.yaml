@@ -1,0 +1,49 @@
+name: 'pokedex'
+description: Flutter app example tthat consumes PokeApi
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=2.19.0 <3.0.0"
+
+dependencies:
+  auto_route: ^6.3.0
+  bloc: ^8.1.1
+  dio: ^5.1.1
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.2
+  flutter_localizations:
+    sdk: flutter
+  freezed: ^2.3.2
+  freezed_annotation: ^2.2.0
+  get_it: ^7.3.0
+  json_annotation: ^4.8.0
+  injectable: ^2.1.1
+  intl: any
+  lottie: ^2.3.2
+  retrofit: ^4.0.1
+  shared_preferences: ^2.1.0
+
+dev_dependencies:
+  auto_route_generator: ^6.2.0
+  bloc_test: ^9.1.1
+  build_runner: ^2.3.3
+  flutter_launcher_icons: ^0.12.0
+  flutter_native_splash: ^2.2.19
+  flutter_test:
+    sdk: flutter
+  injectable_generator: ^2.1.5
+  json_serializable: ^6.3.1
+  mocktail: ^0.3.0
+  retrofit_generator: ^6.0.0+3
+  very_good_analysis: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - assets/
+    # - assets/icons/
+    # - assets/images/
+    - assets/lottie/

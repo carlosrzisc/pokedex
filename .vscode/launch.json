@@ -1,0 +1,72 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "[DEVDebug]",
+      "program": "${workspaceFolder}/lib/main_development.dart",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--flavor",
+        "development",
+        "--debug"
+      ]
+    },
+    {
+      "name": "[DEVRelease]",
+      "program": "${workspaceFolder}/lib/main_development.dart",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--flavor",
+        "development",
+        "--release",
+        "--dart-define=apiLoggerEnabled=false"
+      ]
+    },
+    {
+      "name": "[STGDebug]",
+      "program": "${workspaceFolder}/lib/main_staging.dart",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--flavor",
+        "staging",
+        "--debug"
+      ]
+    },
+    {
+      "name": "[STGRelease]",
+      "program": "${workspaceFolder}/lib/main_staging.dart",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--flavor",
+        "staging",
+        "--release"
+      ]
+    },
+    {
+      "name": "[PRDDebug]",
+      "program": "${workspaceFolder}/lib/main.dart",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--flavor",
+        "production",
+        "--debug"
+      ]
+    },
+    {
+      "name": "[PRDRelease]",
+      "program": "${workspaceFolder}/lib/main.dart",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--flavor",
+        "production",
+        "--release"
+      ]
+    },
+  ]
+}
