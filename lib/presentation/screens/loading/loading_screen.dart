@@ -35,7 +35,8 @@ class _LoadingScreenState extends State<_LoadingScreen> {
 
   @override
   void initState() {
-    timer = Timer(const Duration(seconds: 3), () => setState(() => isSlow = true));
+    timer =
+        Timer(const Duration(seconds: 3), () => setState(() => isSlow = true));
     super.initState();
   }
 

@@ -36,7 +36,8 @@ class AppStorageImpl implements AppStorage {
       case String:
         return preferences.setString(key, value as String);
       default:
-        throw Exception('The setter for ${value.runtimeType} is not implemented');
+        throw Exception(
+            'The setter for ${value.runtimeType} is not implemented');
     }
   }
 

@@ -13,5 +13,5 @@ class DevConfig implements FlavorConfig {
   bool get enableLogging => kDebugMode;
 
   @override
-  String get baseUrl => 'https:&#x2F;&#x2F;pokeapi.co&#x2F;api&#x2F;v2&#x2F;';
+  String get baseUrl => 'https://pokeapi.co/api/v2/';
 }

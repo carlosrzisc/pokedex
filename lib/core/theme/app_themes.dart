@@ -12,6 +12,8 @@ class AppThemes {
     textTheme: AppStyles.textTheme,
   );
 
-  /// If some day we would need to support dark theme
-  static final ThemeData darkTheme = ThemeData(brightness: Brightness.dark);
+  static final ThemeData darkTheme = ThemeData(
+    brightness: Brightness.dark,
+    scaffoldBackgroundColor: AppColors.primaryDarker,
+  );
 }

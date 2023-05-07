@@ -6,7 +6,6 @@ import 'package:pokedex/core/injection/injector.dart';
 
 Future<void> config(String env) async {
   WidgetsFlutterBinding.ensureInitialized();
-  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       /// iOS - Results in light icons

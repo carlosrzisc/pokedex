@@ -14,18 +14,20 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => GetIt.I.get<SplashBloc>()..add(const SplashEvent.load()),
+      create: (context) =>
+          GetIt.I.get<SplashBloc>()..add(const SplashEvent.load()),
       child: BlocListener<SplashBloc, SplashState>(
         listener: (context, state) {
           state.maybeWhen(
             loadInProgress: () => AppLoading.showLoading(context),
             authenticated: () => context.router.replace(const HomeRoute()),
-            unAuthenticated: () => context.router.replace(const LoginRoute()),
+            unAuthenticated: () => context.router.replace(const HomeRoute()),
             orElse: () => <void>{},
           );
         },
         child: const Scaffold(
-          body: SizedBox(), // instead of the loading animation, you might want to build a splash screen here instead
+          body:
+              SizedBox(), // instead of the loading animation, you might want to build a splash screen here instead
         ),
       ),
     );

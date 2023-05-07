@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:pokedex/data/service/api/api_endpoints.dart';
+import 'package:pokedex/domain/model/pokemon_list_response/pokemon_list_response.dart';
 import 'package:retrofit/http.dart';
 
 part 'app_api.g.dart';
@@ -12,9 +13,6 @@ abstract class ClientApi {
   /// AUTH ENDPOINTS
   /// ************************************
 
-  @POST(ApiEndpoints.login)
-  Future<String?> sendPhoneNumber({@Body() required Map<String, dynamic> payload});
-
-  @POST(ApiEndpoints.verifyCode)
-  Future<String?> sendSms({@Body() required Map<String, dynamic> payload});
+  @GET(ApiEndpoints.pokemon)
+  Future<PokemonListResponse> getPokemonList();
 }

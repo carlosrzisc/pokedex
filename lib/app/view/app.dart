@@ -20,7 +20,7 @@ class App extends StatelessWidget {
       child: BlocBuilder<LocaleBloc, LocaleState>(
         builder: (context, state) {
           return MaterialApp.router(
-            theme: AppThemes.lightTheme,
+            theme: AppThemes.darkTheme,
             debugShowCheckedModeBanner: false,
             locale: state.locale,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
