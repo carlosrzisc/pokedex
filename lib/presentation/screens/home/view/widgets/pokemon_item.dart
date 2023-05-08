@@ -16,7 +16,7 @@ class PokemonItem extends StatelessWidget {
     final image = _pokemon.image;
     return ListTile(
       title: image != null ? Image.network(image) : const SizedBox.shrink(),
-      subtitle: Text(_pokemon.name ?? '--'),
+      subtitle: Text(_pokemon.name ?? ''),
       onTap: onTap,
     );
   }

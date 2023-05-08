@@ -25,6 +25,7 @@ dependencies:
   retrofit: ^4.0.1
   shared_preferences: ^2.1.0
   cached_network_image: ^3.2.3
+  dio_cache_interceptor: ^3.4.2
 
 dev_dependencies:
   auto_route_generator: ^6.2.0
