@@ -1,6 +1,10 @@
 # Bright PokeDex
 
-Flutter app example tthat consumes PokeApi
+Flutter app example that consumes PokeApi to show all pokemon in a paginated GridView. It has a clean architecture to separate concerns on different layers.
+
+# Screenshots
+![Loading animation](/screenshots/scr1.png)
+![Pokemon list](/screenshots/scr2.png)
 
 ---
 
