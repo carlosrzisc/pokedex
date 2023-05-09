@@ -14,16 +14,23 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<_Load>(_onLoad);
   }
   final PokemonRepository _pokemonRepository;
+  int offset = 0;
+  static const int _limit = 30;
 
   Future<void> _onLoad(_Load event, Emitter<HomeState> emit) async {
+    if (state is LoadInProgress) {
+      return;
+    }
     emit(const HomeState.loadInProgress());
     try {
-      final pokemonList = await _pokemonRepository.getPokemonList();
+      final pokemonList = await _pokemonRepository.getPokemonList(offset: offset, limit: _limit);
       if (pokemonList == null) {
         emit(const HomeState.loadFailure());
         return;
       }
-      emit(HomeState.loadSuccess(pokemonList));
+      offset += _limit;
+      final hasReachedMax = pokemonList.length < _limit;
+      emit(HomeState.loadSuccess(pokemonList, hasReachedMax: hasReachedMax));
     } catch (_) {
       emit(const HomeState.loadFailure());
     }

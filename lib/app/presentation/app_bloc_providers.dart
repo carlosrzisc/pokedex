@@ -4,5 +4,6 @@ import 'package:pokedex/app/presentation/bloc/locale/locale_bloc.dart';
 
 final appBlocProviders = <BlocProvider>[
   BlocProvider<LocaleBloc>(
-      create: (_) => GetIt.I.get<LocaleBloc>()..add(const LocaleEvent.load())),
+    create: (_) => GetIt.I.get<LocaleBloc>()..add(const LocaleEvent.load()),
+  ),
 ];

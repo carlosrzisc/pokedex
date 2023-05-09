@@ -19,7 +19,7 @@ class AppColors {
   static const grayLight = Color(0xFFDBDBDB);
   static const gray = Color(0xFFA1A1A1);
   static const grayDark = Color(0xFF696969);
-  static const grayDarker = Color(0xFF353535);
+  static const grayDarker = Color(0xFF191919);
 
   /// Error
   static const errorLighter = Color(0xFFFBE4E4);

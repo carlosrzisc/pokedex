@@ -14,5 +14,13 @@ abstract class ClientApi {
   /// ************************************
 
   @GET(ApiEndpoints.pokemon)
-  Future<PokemonListResponse> getPokemonList();
+  Future<PokemonListResponse> getPokemonList({
+    @Query('offset') required int offset,
+    @Query('limit') required int limit,
+  });
+
+  @GET('${ApiEndpoints.pokemon}/{criteria}')
+  Future<PokemonListResponse> searchPokemon({
+    @Path('criteria') required String criteria,
+  });
 }

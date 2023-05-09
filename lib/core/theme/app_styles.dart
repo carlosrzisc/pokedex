@@ -15,25 +15,37 @@ class AppStyles {
 
     /// Title - EXO
     titleLarge: TextStyle(
-        fontFamily: AppFonts.exo2Medium, fontSize: 18, color: AppColors.white),
+      fontFamily: AppFonts.exo2Medium,
+      fontSize: 18,
+      color: AppColors.white,
+    ),
     titleMedium: TextStyle(
-        fontFamily: AppFonts.exo2Medium, fontSize: 16, color: AppColors.white),
+      fontFamily: AppFonts.exo2Medium,
+      fontSize: 16,
+      color: AppColors.white,
+    ),
     titleSmall: TextStyle(
-        fontFamily: AppFonts.exo2Medium, fontSize: 15, color: AppColors.white),
+      fontFamily: AppFonts.exo2Medium,
+      fontSize: 15,
+      color: AppColors.white,
+    ),
 
     /// Label - AVENIR
     labelLarge: TextStyle(
-        fontFamily: AppFonts.avenirMedium,
-        fontSize: 20,
-        color: AppColors.white),
+      fontFamily: AppFonts.avenirMedium,
+      fontSize: 20,
+      color: AppColors.white,
+    ),
     labelMedium: TextStyle(
-        fontFamily: AppFonts.avenirMedium,
-        fontSize: 18,
-        color: AppColors.white),
+      fontFamily: AppFonts.avenirMedium,
+      fontSize: 18,
+      color: AppColors.white,
+    ),
     labelSmall: TextStyle(
-        fontFamily: AppFonts.avenirMedium,
-        fontSize: 16,
-        color: AppColors.white),
+      fontFamily: AppFonts.avenirMedium,
+      fontSize: 16,
+      color: AppColors.white,
+    ),
 
     /// Body - AVENIR
     bodyLarge: TextStyle(fontFamily: AppFonts.avenirMedium, fontSize: 20),

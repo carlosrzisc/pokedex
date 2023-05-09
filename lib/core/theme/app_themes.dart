@@ -14,6 +14,6 @@ class AppThemes {
 
   static final ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
-    scaffoldBackgroundColor: AppColors.primaryDarker,
+    scaffoldBackgroundColor: AppColors.grayDarker,
   );
 }

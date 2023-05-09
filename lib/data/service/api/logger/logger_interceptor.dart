@@ -17,7 +17,9 @@ class NetworkLoggerInterceptor extends Interceptor {
 
   @override
   void onResponse(
-      Response<dynamic> response, ResponseInterceptorHandler handler) {
+    Response<dynamic> response,
+    ResponseInterceptorHandler handler,
+  ) {
     NetworkLogger.logResponse(response);
     super.onResponse(response, handler);
   }

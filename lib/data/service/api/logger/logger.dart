@@ -16,11 +16,11 @@ class NetworkLogger {
       final path = '${req.path}$query';
 
       final result = ResponseData(
-              path: path,
-              method: method,
-              data: res.data,
-              statusCode: statusCode)
-          .toJson();
+        path: path,
+        method: method,
+        data: res.data,
+        statusCode: statusCode,
+      ).toJson();
 
       DebugLogger.loggit(encodeJson(result), name: 'Response');
     } else {

@@ -1,6 +1,10 @@
-// pokemonitem stateless widget
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:pokedex/core/theme/theme.dart';
 import 'package:pokedex/domain/model/pokemon/pokemon.dart';
+import 'package:pokedex/presentation/screens/home/view/widgets/badge.dart';
+import 'package:pokedex/presentation/utilities/extensions/extensions.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class PokemonItem extends StatelessWidget {
   const PokemonItem(
@@ -15,8 +19,21 @@ class PokemonItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final image = _pokemon.image;
     return ListTile(
-      title: image != null ? Image.network(image) : const SizedBox.shrink(),
-      subtitle: Text(_pokemon.name ?? ''),
+      title: Stack(
+        children: [
+          if (image != null) Image(image: CachedNetworkImageProvider(image)) else const SizedBox.shrink(),
+          Positioned(
+            top: 0,
+            right: 0,
+            child: ItemBadge(_pokemon.id.toString()),
+          ),
+        ],
+      ),
+      subtitle: Text(
+        _pokemon.name?.capitalize() ?? '',
+        textAlign: TextAlign.center,
+        style: GoogleFonts.bungee().copyWith(color: AppColors.white, fontSize: 12),
+      ),
       onTap: onTap,
     );
   }

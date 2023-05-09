@@ -2,9 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:pokedex/core/extensions/context_extensions.dart';
-import 'package:pokedex/core/extensions/widget_extensions.dart';
-import 'package:pokedex/core/theme/app_colors.dart';
+import 'package:pokedex/presentation/utilities/extensions/extensions.dart';
 import 'package:pokedex/presentation/utilities/widget_keys.dart';
 
 class AppLoading {
@@ -14,7 +12,7 @@ class AppLoading {
     return showDialog<void>(
       context: context,
       barrierDismissible: false,
-      barrierColor: AppColors.primary.withOpacity(0.8),
+      barrierColor: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.6),
       builder: (context) {
         return const _LoadingScreen(key: AppKeys.loadingScreen);
       },
@@ -35,8 +33,7 @@ class _LoadingScreenState extends State<_LoadingScreen> {
 
   @override
   void initState() {
-    timer =
-        Timer(const Duration(seconds: 3), () => setState(() => isSlow = true));
+    timer = Timer(const Duration(seconds: 3), () => setState(() => isSlow = true));
     super.initState();
   }
 
@@ -65,9 +62,9 @@ class _LoadingScreenState extends State<_LoadingScreen> {
               context.l10n.takingLong,
               style: context.textTheme.titleLarge,
               textAlign: TextAlign.center,
-            ).paddingOnly(top: 150),
+            ),
           ),
       ],
-    ).paddingOnly(bottom: 100);
+    );
   }
 }

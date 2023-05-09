@@ -28,7 +28,9 @@ class LocaleBloc extends Bloc<LocaleEvent, LocaleState> {
   }
 
   FutureOr<void> _onSwitchLocale(
-      _SwitchLocale event, Emitter<LocaleState> emit) async {
+    _SwitchLocale event,
+    Emitter<LocaleState> emit,
+  ) async {
     await _storage.language.save(event.locale.languageCode);
     add(const LocaleEvent.load());
   }
