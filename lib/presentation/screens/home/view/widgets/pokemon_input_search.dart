@@ -18,20 +18,28 @@ class _PokemonInputSearchState extends State<PokemonInputSearch> {
   Widget build(BuildContext context) {
     return Theme(
       data: ThemeData.light(),
-      child: TextField(
-        controller: _controller,
-        decoration: InputDecoration(
-          hintText: context.l10n.searchPokemon,
-          contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-          filled: true,
-          suffixIcon: IconButton(
-            icon: const Icon(Icons.search),
-            onPressed: () => widget.onSearch?.call(_controller.text),
-          ),
-          fillColor: Theme.of(context).textTheme.bodyMedium?.color,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20),
-            borderSide: BorderSide.none,
+      child: Card(
+        elevation: 6,
+        shape: ShapeBorder.lerp(
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+          1,
+        ),
+        child: TextField(
+          controller: _controller,
+          decoration: InputDecoration(
+            hintText: context.l10n.searchPokemon,
+            contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            filled: true,
+            suffixIcon: IconButton(
+              icon: const Icon(Icons.search),
+              onPressed: () => widget.onSearch?.call(_controller.text),
+            ),
+            fillColor: Theme.of(context).textTheme.bodyMedium?.color,
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(25),
+              borderSide: BorderSide.none,
+            ),
           ),
         ),
       ),

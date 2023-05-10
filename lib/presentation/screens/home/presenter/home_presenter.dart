@@ -44,7 +44,7 @@ class HomePresenter extends StatelessWidget {
                 orElse: () => const SizedBox.shrink(),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(20, 60, 20, 0),
+                padding: const EdgeInsets.fromLTRB(15, 60, 15, 0),
                 child: PokemonInputSearch(
                   onSearch: (text) => context.read<HomeBloc>().add(HomeEvent.search(text)),
                 ),
