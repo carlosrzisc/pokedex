@@ -36,6 +36,7 @@ class _PokemonListGridViewState extends State<PokemonListGridView> {
     return GridView.builder(
       itemCount: widget.pokemonList.length,
       gridDelegate: gridDelegate,
+      padding: const EdgeInsets.only(top: 130),
       itemBuilder: (_, index) => PokemonItem(
         widget.pokemonList[index],
         onTap: () => widget.onPokemonTap?.call(widget.pokemonList[index]),
