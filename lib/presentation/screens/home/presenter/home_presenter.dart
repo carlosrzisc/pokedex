@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:pokedex/core/routing/app_router.dart';
+import 'package:pokedex/core/theme/theme.dart';
 import 'package:pokedex/domain/model/pokemon/pokemon.dart';
 import 'package:pokedex/l10n/l10n.dart';
 import 'package:pokedex/presentation/screens/home/bloc/home_bloc.dart';
@@ -27,7 +28,18 @@ class HomePresenter extends StatelessWidget {
             },
             pokemonNotFound: () {
               context.router.pop();
-              return ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(context.l10n.pokemonNotFound)));
+              return ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    context.l10n.pokemonNotFound,
+                    style: const TextStyle(
+                      color: AppColors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  backgroundColor: AppColors.error,
+                ),
+              );
             },
             orElse: context.router.pop, // dismiss loading animation
           );
