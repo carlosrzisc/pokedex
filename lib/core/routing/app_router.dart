@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:pokedex/presentation/screens/splash/splash_screen.dart';
 import 'package:pokedex/presentation/screens/home/home.dart';
 import 'package:pokedex/presentation/screens/pokemon_details/pokemon_details.dart';
+import 'package:flutter/material.dart';
 
 /// Important: If you are passing typed arguments to any screen, you need to manually add the dependency
 /// where the type is defined. Otherwise the auto_route_generator will not generate the required code

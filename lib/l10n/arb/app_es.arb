@@ -1,5 +1,7 @@
 {
     "@@locale": "es",
     "takingLong": "Esto esta tomando mas tiempo de lo esperado",
-    "genericError": "Algo salió mal."
+    "genericError": "Algo salió mal.",
+    "searchPokemon": "Buscar pokemon",
+    "pokemonNotFound": "Pokemon not found."
 }

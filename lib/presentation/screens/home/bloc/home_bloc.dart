@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -12,6 +14,7 @@ part 'home_bloc.freezed.dart';
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeBloc(this._pokemonRepository) : super(const HomeState.initial()) {
     on<_Load>(_onLoad);
+    on<_Search>(_onSeach);
   }
   final PokemonRepository _pokemonRepository;
   int offset = 0;
@@ -33,6 +36,19 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       emit(HomeState.loadSuccess(pokemonList, hasReachedMax: hasReachedMax));
     } catch (_) {
       emit(const HomeState.loadFailure());
+    }
+  }
+
+  Future<void> _onSeach(_Search event, Emitter<HomeState> emit) async {
+    if (state is LoadInProgress) {
+      return;
+    }
+    emit(const HomeState.loadInProgress());
+    try {
+      final pokemon = await _pokemonRepository.search(event.pokemon);
+      emit(HomeState.pokemonFound(pokemon));
+    } catch (e) {
+      emit(const HomeState.pokemonNotFound());
     }
   }
 }

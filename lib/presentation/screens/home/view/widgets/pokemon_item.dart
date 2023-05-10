@@ -25,7 +25,7 @@ class PokemonItem extends StatelessWidget {
           Positioned(
             top: 0,
             right: 0,
-            child: ItemBadge(_pokemon.id.toString()),
+            child: ItemBadge(_pokemon.pokemonId.toString()),
           ),
         ],
       ),

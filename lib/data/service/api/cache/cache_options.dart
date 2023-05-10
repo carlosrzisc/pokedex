@@ -11,4 +11,5 @@ final cacheOptions = CacheOptions(
   // Useful only when origin server has no cache config or custom behaviour is desired.
   // Defaults to [null].
   maxStale: const Duration(days: 180),
+  policy: CachePolicy.forceCache,
 );
