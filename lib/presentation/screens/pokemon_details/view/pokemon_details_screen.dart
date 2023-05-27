@@ -1,22 +1,31 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:pokedex/domain/model/pokemon/pokemon.dart';
+import 'package:pokedex/presentation/screens/pokemon_details/presenter/pokemon_details_presenter.dart';
 
 @RoutePage()
 class PokemonDetailsScreen extends StatelessWidget {
-  const PokemonDetailsScreen(this.pokemonId, {super.key});
-  final String pokemonId;
+  const PokemonDetailsScreen(this.pokemon, {super.key});
+  final Pokemon pokemon;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () => context.router.pop(),
-          icon: const Icon(Icons.arrow_back),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Row(
+              children: [
+                IconButton(
+                  onPressed: () => context.router.pop(),
+                  icon: const Icon(Icons.arrow_back),
+                ),
+              ],
+            ),
+            Expanded(child: PokemonDetailsPresenter(pokemon)),
+          ],
         ),
-        title: Text(pokemonId),
       ),
-      body: Text(pokemonId),
     );
   }
 }

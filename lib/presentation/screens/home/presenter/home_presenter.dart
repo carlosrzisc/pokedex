@@ -71,9 +71,6 @@ class HomePresenter extends StatelessWidget {
   }
 
   void _onPokemonSelected(BuildContext context, Pokemon pokemon) {
-    final id = pokemon.pokemonId;
-    if (id != null) {
-      context.router.push(PokemonDetailsRoute(pokemonId: id));
-    }
+    context.router.push(PokemonDetailsRoute(pokemon: pokemon));
   }
 }

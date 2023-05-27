@@ -14,20 +14,20 @@ class AppLoading {
       barrierDismissible: false,
       barrierColor: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.6),
       builder: (context) {
-        return const _LoadingScreen(key: AppKeys.loadingScreen);
+        return const LoadingScreen(key: AppKeys.loadingScreen);
       },
     );
   }
 }
 
-class _LoadingScreen extends StatefulWidget {
-  const _LoadingScreen({super.key});
+class LoadingScreen extends StatefulWidget {
+  const LoadingScreen({super.key});
 
   @override
-  State<_LoadingScreen> createState() => _LoadingScreenState();
+  State<LoadingScreen> createState() => _LoadingScreenState();
 }
 
-class _LoadingScreenState extends State<_LoadingScreen> {
+class _LoadingScreenState extends State<LoadingScreen> {
   bool isSlow = false;
   late Timer timer;
 

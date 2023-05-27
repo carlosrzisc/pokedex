@@ -45,7 +45,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     }
     emit(const HomeState.loadInProgress());
     try {
-      final pokemon = await _pokemonRepository.search(event.pokemon);
+      final pokemon = await _pokemonRepository.search(event.pokemon.toLowerCase());
       emit(HomeState.pokemonFound(pokemon));
     } catch (e) {
       emit(const HomeState.pokemonNotFound());

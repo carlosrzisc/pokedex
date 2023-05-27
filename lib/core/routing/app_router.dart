@@ -3,6 +3,7 @@ import 'package:pokedex/presentation/screens/splash/splash_screen.dart';
 import 'package:pokedex/presentation/screens/home/home.dart';
 import 'package:pokedex/presentation/screens/pokemon_details/pokemon_details.dart';
 import 'package:flutter/material.dart';
+import 'package:pokedex/domain/model/pokemon/pokemon.dart';
 
 /// Important: If you are passing typed arguments to any screen, you need to manually add the dependency
 /// where the type is defined. Otherwise the auto_route_generator will not generate the required code

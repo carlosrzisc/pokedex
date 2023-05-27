@@ -21,7 +21,12 @@ class PokemonItem extends StatelessWidget {
     return ListTile(
       title: Stack(
         children: [
-          if (image != null) Image(image: CachedNetworkImageProvider(image)) else const SizedBox.shrink(),
+          if (image != null)
+            Hero(tag: 'image-${_pokemon.pokemonId}', child: Image(image: CachedNetworkImageProvider(image)))
+          else
+            const SizedBox(
+              height: 20,
+            ),
           Positioned(
             top: 0,
             right: 0,
