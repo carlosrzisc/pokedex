@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:pokedex/domain/model/pokemon/pokemon_type_item.dart';
 
 part 'pokemon.freezed.dart';
 part 'pokemon.g.dart';
@@ -9,6 +10,9 @@ class Pokemon with _$Pokemon {
     String? name,
     String? url,
     int? id,
+    List<PokemonTypeItem>? types,
+    int? weight,
+    int? height,
   }) = _Pokemon;
   const Pokemon._();
   factory Pokemon.fromJson(Map<String, dynamic> json) => _$PokemonFromJson(json);
@@ -16,6 +20,9 @@ class Pokemon with _$Pokemon {
   String? get image {
     return '$imagesUrl$pokemonId.png';
   }
+
+  int? get heightCm => height != null ? height! * 10 : null;
+  int? get weightKg => weight != null ? (weight! / 10).floor() : null;
 
   String? get pokemonId => id?.toString() ?? url?.split('/').elementAt(6);
 }

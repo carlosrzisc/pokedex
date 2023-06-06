@@ -15,7 +15,7 @@ class PokemonDetailsPresenter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => GetIt.I.get<DetailsBloc>()..add(DetailsEvent.fetch(pokemon.pokemonId!)),
+      create: (context) => GetIt.I.get<DetailsBloc>()..add(DetailsEvent.fetch(pokemon)),
       child: BlocConsumer<DetailsBloc, DetailsState>(
         listener: (context, state) {
           state.maybeWhen(

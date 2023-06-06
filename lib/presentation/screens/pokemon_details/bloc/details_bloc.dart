@@ -16,9 +16,13 @@ class DetailsBloc extends Bloc<DetailsEvent, DetailsState> {
   final PokemonRepository _pokemonRepository;
 
   Future<void> _onFetch(_Fetch event, Emitter<DetailsState> emit) async {
+    if (event.pokemon.height != null) {
+      // no need to fetch the pokemon again
+      return;
+    }
     emit(const DetailsState.loadInProgress());
     try {
-      final pokemon = await _pokemonRepository.search(event.id);
+      final pokemon = await _pokemonRepository.search(event.pokemon.pokemonId!);
       emit(DetailsState.loadSuccess(pokemon));
     } catch (e) {
       emit(const DetailsState.loadFailure());

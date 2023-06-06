@@ -48,5 +48,5 @@ flutter:
   assets:
     - assets/
     # - assets/icons/
-    # - assets/images/
+    - assets/images/pokemon_type/
     - assets/lottie/
