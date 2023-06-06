@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:pokedex/data/service/api/logger/logger.dart';
+import 'package:pokedex_api/src/logger/logger.dart';
 
 class NetworkLoggerInterceptor extends Interceptor {
   @override

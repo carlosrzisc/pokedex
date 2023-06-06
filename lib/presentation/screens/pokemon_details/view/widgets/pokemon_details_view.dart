@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:pokedex/domain/model/pokemon/pokemon.dart';
 import 'package:pokedex/presentation/screens/pokemon_details/view/widgets/pokemon_type_widget.dart';
 import 'package:pokedex/presentation/utilities/extensions/text_extensions.dart';
+import 'package:pokedex_api/pokedex_api.dart';
 
 class PokemonDetailsView extends StatelessWidget {
   const PokemonDetailsView(this.pokemon, {super.key});

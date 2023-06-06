@@ -2,8 +2,8 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
-import 'package:pokedex/data/service/api/logger/models.dart';
-import 'package:pokedex/data/service/api/logger/utils.dart';
+import 'package:pokedex_api/src/logger/models.dart';
+import 'package:pokedex_api/src/logger/utils.dart';
 
 class NetworkLogger {
   static void logResponse(dynamic res) {

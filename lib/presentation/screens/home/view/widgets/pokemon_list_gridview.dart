@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pokedex/domain/model/pokemon/pokemon.dart';
 import 'package:pokedex/presentation/screens/home/bloc/home_bloc.dart';
 import 'package:pokedex/presentation/screens/home/view/widgets/pokemon_item.dart';
+import 'package:pokedex_api/pokedex_api.dart';
 
 class PokemonListGridView extends StatefulWidget {
   const PokemonListGridView(

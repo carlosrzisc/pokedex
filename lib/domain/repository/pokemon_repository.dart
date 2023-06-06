@@ -1,4 +1,4 @@
-import 'package:pokedex/domain/model/pokemon/pokemon.dart';
+import 'package:pokedex_api/pokedex_api.dart';
 
 abstract class PokemonRepository {
   Future<List<Pokemon>?> getPokemonList({required int offset, int limit});

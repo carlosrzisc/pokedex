@@ -4,12 +4,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:pokedex/core/routing/app_router.dart';
 import 'package:pokedex/core/theme/theme.dart';
-import 'package:pokedex/domain/model/pokemon/pokemon.dart';
 import 'package:pokedex/l10n/l10n.dart';
 import 'package:pokedex/presentation/screens/home/bloc/home_bloc.dart';
 import 'package:pokedex/presentation/screens/home/view/widgets/pokemon_input_search.dart';
 import 'package:pokedex/presentation/screens/home/view/widgets/pokemon_list_gridview.dart';
 import 'package:pokedex/presentation/screens/loading/loading_screen.dart';
+import 'package:pokedex_api/pokedex_api.dart';
 
 class HomePresenter extends StatelessWidget {
   const HomePresenter({super.key});

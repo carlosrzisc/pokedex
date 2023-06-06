@@ -1,14 +1,13 @@
 import 'package:dio/dio.dart';
-import 'package:pokedex/data/service/api/api_endpoints.dart';
-import 'package:pokedex/domain/model/pokemon/pokemon.dart';
-import 'package:pokedex/domain/model/pokemon_list_response/pokemon_list_response.dart';
+import 'package:pokedex_api/src/model/api_endpoints.dart';
+import 'package:pokedex_api/src/model/model.dart';
 import 'package:retrofit/http.dart';
 
-part 'app_api.g.dart';
+part 'pokedex_api.g.dart';
 
 @RestApi()
-abstract class ClientApi {
-  factory ClientApi(Dio dio, {String? baseUrl}) = _ClientApi;
+abstract class PokedexApi {
+  factory PokedexApi(Dio dio, {String? baseUrl}) = _PokedexApi;
 
   @GET(ApiEndpoints.pokemon)
   Future<PokemonListResponse> getPokemonList({

@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:pokedex/domain/model/pokemon/pokemon.dart';
 import 'package:pokedex/presentation/screens/pokemon_details/presenter/pokemon_details_presenter.dart';
+import 'package:pokedex_api/pokedex_api.dart';
 
 @RoutePage()
 class PokemonDetailsScreen extends StatelessWidget {

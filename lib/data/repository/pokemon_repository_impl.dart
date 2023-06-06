@@ -1,12 +1,11 @@
 import 'package:injectable/injectable.dart';
-import 'package:pokedex/data/service/api/app_api.dart';
-import 'package:pokedex/domain/model/pokemon/pokemon.dart';
 import 'package:pokedex/domain/repository/pokemon_repository.dart';
+import 'package:pokedex_api/pokedex_api.dart';
 
 @Injectable(as: PokemonRepository)
 class PokemonRepositoryImpl implements PokemonRepository {
   PokemonRepositoryImpl(this._api);
-  final ClientApi _api;
+  final PokedexApi _api;
   final List<Pokemon> _pokemonList = [];
 
   @override

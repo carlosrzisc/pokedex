@@ -5,9 +5,7 @@ import 'package:injectable/injectable.dart';
 import 'package:pokedex/core/config/env_config.dart';
 import 'package:pokedex/core/config/flavors/flavor_config.dart';
 import 'package:pokedex/core/routing/app_router.dart';
-import 'package:pokedex/data/service/api/app_api.dart';
-import 'package:pokedex/data/service/api/cache/cache_options.dart';
-import 'package:pokedex/data/service/api/logger/logger_interceptor.dart';
+import 'package:pokedex_api/pokedex_api.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 @module
@@ -22,14 +20,14 @@ abstract class RegisterModule {
   Dio get dio => Dio(BaseOptions(headers: {'Accept': 'application/json'}));
 
   @LazySingleton()
-  ClientApi get api {
+  PokedexApi get api {
     final dio = GetIt.I.get<Dio>();
     if (EnvConfig.isApiLoggerEnabled) {
       dio.interceptors.add(NetworkLoggerInterceptor());
     }
     dio.interceptors.add(DioCacheInterceptor(options: cacheOptions));
 
-    return ClientApi(
+    return PokedexApi(
       dio,
       baseUrl: GetIt.I.get<FlavorConfig>().baseUrl,
     );

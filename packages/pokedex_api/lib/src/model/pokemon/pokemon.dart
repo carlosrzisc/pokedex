@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:pokedex/domain/model/pokemon/pokemon_type_item.dart';
+import 'package:pokedex_api/src/model/pokemon/pokemon_type_item.dart';
 
 part 'pokemon.freezed.dart';
 part 'pokemon.g.dart';
