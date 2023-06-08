@@ -25,7 +25,7 @@ class NetworkLoggerInterceptor extends Interceptor {
   }
 
   @override
-  void onError(DioError err, ErrorInterceptorHandler handler) {
+  void onError(DioException err, ErrorInterceptorHandler handler) {
     NetworkLogger.logError(err);
     super.onError(err, handler);
   }

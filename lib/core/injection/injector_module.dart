@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:pokedex/core/config/env_config.dart';
 import 'package:pokedex/core/routing/app_router.dart';
@@ -12,9 +11,6 @@ abstract class RegisterModule {
 
   @lazySingleton
   AppRouter get appRouter => AppRouter();
-
-  @lazySingleton
-  Dio get dio => Dio(BaseOptions(headers: {'Accept': 'application/json'}));
 
   @LazySingleton()
   PokedexApi get api => PokedexApi.withOptions(isLoggingEnabled: EnvConfig.isApiLoggerEnabled);

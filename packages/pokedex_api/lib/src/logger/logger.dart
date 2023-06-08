@@ -51,7 +51,7 @@ class NetworkLogger {
   }
 
   static void logError(dynamic e) {
-    if (e is DioError) {
+    if (e is DioException) {
       _handleDioError(e);
     } else {
       DebugLogger.loggit(e.toString(), name: 'Error');
@@ -63,7 +63,7 @@ class NetworkLogger {
     return encoder.convert(data);
   }
 
-  static void _handleDioError(DioError e) {
+  static void _handleDioError(DioException e) {
     final res = e.response;
     final req = e.requestOptions;
 

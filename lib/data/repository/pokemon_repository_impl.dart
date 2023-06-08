@@ -16,10 +16,7 @@ class PokemonRepositoryImpl implements PokemonRepository {
   }
 
   @override
-  Future<Pokemon> getPokemonDetails(String id) {
-    // TODO: implement getPokemonDetails
-    throw UnimplementedError();
-  }
+  Future<Pokemon> getPokemonDetails(String id) => _api.searchPokemon(criteria: id);
 
   @override
   Future<Pokemon> search(String pokemon) => _api.searchPokemon(criteria: pokemon);
