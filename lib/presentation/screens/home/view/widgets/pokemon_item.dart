@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pokedex/core/theme/theme.dart';
 import 'package:pokedex/presentation/screens/home/view/widgets/badge.dart';
 import 'package:pokedex/presentation/utilities/extensions/extensions.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:pokedex_api/pokedex_api.dart';
+import 'package:pokemon_ui/pokemon_ui.dart';
 
 class PokemonItem extends StatelessWidget {
   const PokemonItem(

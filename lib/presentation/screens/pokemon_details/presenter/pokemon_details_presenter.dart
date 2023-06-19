@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
-import 'package:pokedex/core/theme/theme.dart';
 import 'package:pokedex/presentation/screens/loading/loading_screen.dart';
 import 'package:pokedex/presentation/screens/pokemon_details/bloc/details_bloc.dart';
 import 'package:pokedex/presentation/screens/pokemon_details/view/widgets/pokemon_details_view.dart';
 import 'package:pokedex/presentation/utilities/extensions/extensions.dart';
 import 'package:pokedex_api/pokedex_api.dart';
+import 'package:pokemon_ui/pokemon_ui.dart';
 
 class PokemonDetailsPresenter extends StatelessWidget {
   const PokemonDetailsPresenter(this.pokemon, {super.key});

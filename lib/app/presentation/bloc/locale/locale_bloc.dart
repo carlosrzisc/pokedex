@@ -1,10 +1,10 @@
 import 'dart:async';
 
+import 'package:app_storage/app_storage.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:pokedex/domain/service/local_storage/storage_service_abstr.dart';
 
 part 'locale_state.dart';
 part 'locale_event.dart';

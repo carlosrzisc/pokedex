@@ -24,8 +24,15 @@ dependencies:
   shared_preferences: ^2.1.1
   cached_network_image: ^3.2.3
   google_fonts: ^4.0.4
+  
+  pokemon_repository:
+    path: packages/pokemon_repository
   pokedex_api:
     path: packages/pokedex_api
+  app_storage:
+    path: packages/app_storage
+  pokemon_ui:
+    path: packages/pokemon_ui
 
 dev_dependencies:
   auto_route_generator: ^7.1.1

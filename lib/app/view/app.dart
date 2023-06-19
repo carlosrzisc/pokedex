@@ -4,9 +4,9 @@ import 'package:get_it/get_it.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokedex/app/presentation/app_bloc_providers.dart';
 import 'package:pokedex/app/presentation/bloc/locale/locale_bloc.dart';
-import 'package:pokedex/core/routing/app_router.dart';
-import 'package:pokedex/core/theme/app_themes.dart';
+import 'package:pokedex/app/routing/app_router.dart';
 import 'package:pokedex/l10n/l10n.dart';
+import 'package:pokemon_ui/pokemon_ui.dart';
 
 class App extends StatelessWidget {
   const App({super.key});

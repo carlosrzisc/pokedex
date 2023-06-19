@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/core/theme/theme.dart';
+import 'package:pokemon_ui/pokemon_ui.dart';
 
 class ItemBadge extends StatelessWidget {
   const ItemBadge(this.text, {super.key});
