@@ -89,6 +89,36 @@
 			"group": "build",
 			"label": "flutter: flutter analyze",
 			"detail": ""
+		},
+		{
+			"type": "shell",
+			"command": "melos",
+			"args": [
+				"analyze",
+			],
+			"group": "build",
+			"label": "melos: melos analyze (flutter analyze all packages)",
+			"detail": ""
+		},
+		{
+			"type": "shell",
+			"command": "melos",
+			"args": [
+				"bootstrap",
+			],
+			"group": "build",
+			"label": "melos: melos bootstrap (flutter pub get all packages)",
+			"detail": ""
+		},
+		{
+			"type": "shell",
+			"command": "melos",
+			"args": [
+				"build_runner",
+			],
+			"group": "build",
+			"label": "melos: melos build_runner (dart run build_runner all packages)",
+			"detail": ""
 		}
 	],
 	"inputs": [

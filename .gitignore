@@ -134,3 +134,4 @@ app.*.map.json
 coverage/
 *.*.dart
 *.env
+pubspec_overrides.yaml
