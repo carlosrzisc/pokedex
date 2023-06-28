@@ -58,10 +58,13 @@ class _LoadingScreenState extends State<LoadingScreen> {
         ),
         if (isSlow)
           Align(
-            child: Text(
-              context.l10n.takingLong,
-              style: context.textTheme.titleLarge,
-              textAlign: TextAlign.center,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Text(
+                context.l10n.takingLong,
+                style: context.textTheme.titleLarge,
+                textAlign: TextAlign.center,
+              ),
             ),
           ),
       ],

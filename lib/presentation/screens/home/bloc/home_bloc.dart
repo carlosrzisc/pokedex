@@ -15,39 +15,33 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeBloc(this._pokemonRepository) : super(const HomeState.initial()) {
     on<_Load>(_onLoad);
     on<_Search>(_onSeach);
+    on<_SubscriptionRequested>(_onSubscriptionRequested);
   }
   final PokemonRepository _pokemonRepository;
-  int offset = 0;
-  static const int _limit = 30;
 
-  Future<void> _onLoad(_Load event, Emitter<HomeState> emit) async {
-    if (state is LoadInProgress) {
-      return;
-    }
+  Future<void> _onSubscriptionRequested(_SubscriptionRequested event, Emitter<HomeState> emit) async {
+    await emit.forEach<List<Pokemon>>(
+      _pokemonRepository.pokemonList,
+      onData: HomeState.loadSuccess,
+      onError: (error, stackTrace) => const HomeState.loadFailure(),
+    );
+  }
+
+  void _onLoad(_Load event, Emitter<HomeState> emit) {
+    if (state is LoadInProgress) return;
+
     emit(const HomeState.loadInProgress());
-    try {
-      final pokemonList = await _pokemonRepository.getPokemonList(offset: offset, limit: _limit);
-      if (pokemonList == null) {
-        emit(const HomeState.loadFailure());
-        return;
-      }
-      offset += _limit;
-      final hasReachedMax = pokemonList.length < _limit;
-      emit(HomeState.loadSuccess(pokemonList, hasReachedMax: hasReachedMax));
-    } catch (_) {
-      emit(const HomeState.loadFailure());
-    }
+    _pokemonRepository.loadMore();
   }
 
   Future<void> _onSeach(_Search event, Emitter<HomeState> emit) async {
-    if (state is LoadInProgress) {
-      return;
-    }
+    if (state is LoadInProgress) return;
+
     emit(const HomeState.loadInProgress());
     try {
       final pokemon = await _pokemonRepository.search(event.pokemon.toLowerCase());
       emit(HomeState.pokemonFound(pokemon));
-    } catch (e) {
+    } catch (_) {
       emit(const HomeState.pokemonNotFound());
     }
   }

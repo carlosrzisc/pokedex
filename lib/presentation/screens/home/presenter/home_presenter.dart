@@ -17,7 +17,9 @@ class HomePresenter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => GetIt.I.get<HomeBloc>()..add(const HomeEvent.load()),
+      create: (context) => GetIt.I.get<HomeBloc>()
+        ..add(const HomeEvent.subscriptionRequested())
+        ..add(const HomeEvent.load()),
       child: BlocConsumer<HomeBloc, HomeState>(
         listener: (context, state) {
           state.maybeWhen(
@@ -48,7 +50,7 @@ class HomePresenter extends StatelessWidget {
           return Stack(
             children: [
               state.maybeWhen(
-                loadSuccess: (pokemonList, _) => PokemonListGridView(
+                loadSuccess: (pokemonList) => PokemonListGridView(
                   pokemonList,
                   onPokemonTap: (pokemon) => _onPokemonSelected(context, pokemon),
                 ),
