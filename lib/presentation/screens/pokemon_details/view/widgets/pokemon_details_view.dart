@@ -4,6 +4,8 @@ import 'package:pokedex/presentation/screens/pokemon_details/view/widgets/pokemo
 import 'package:pokedex/presentation/utilities/extensions/text_extensions.dart';
 import 'package:pokedex_api/pokedex_api.dart';
 
+part 'pokemon_types_list.dart';
+
 class PokemonDetailsView extends StatelessWidget {
   const PokemonDetailsView(this.pokemon, {super.key});
   final Pokemon pokemon;
@@ -16,7 +18,7 @@ class PokemonDetailsView extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         children: [
-          _PokemonTypesList(pokemon: pokemon),
+          _PokemonTypesList(pokemonTypes: pokemon.types),
           if (image != null)
             Hero(
               tag: 'image-${pokemon.pokemonId}',
@@ -29,29 +31,6 @@ class PokemonDetailsView extends StatelessWidget {
           Text('Weight: ${pokemon.weightKg ?? ''} kg'),
         ],
       ),
-    );
-  }
-}
-
-class _PokemonTypesList extends StatelessWidget {
-  const _PokemonTypesList({
-    required this.pokemon,
-  });
-
-  final Pokemon pokemon;
-
-  @override
-  Widget build(BuildContext context) {
-    if ((pokemon.types?.length ?? 0) == 0) {
-      return const SizedBox(
-        height: 67,
-      );
-    }
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children:
-          pokemon.types?.map((e) => e.type != null ? PokemonTypeWidget(e.type!) : const SizedBox.shrink()).toList() ??
-              [],
     );
   }
 }
